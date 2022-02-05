@@ -50,6 +50,7 @@ def processRequest(req):
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
     description=parameters.get("description")
+    print("Received Description########",description)
    
     intent = result.get("intent").get('displayName')
     
