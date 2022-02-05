@@ -3,6 +3,7 @@ import tensorflow as tf
 from flask import Flask, request, make_response
 import json
 import pickle
+import nltk
 from flask_cors import cross_origin
 from keras.models import Model
 from keras.models import load_model
