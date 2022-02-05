@@ -4,8 +4,6 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 import string
 
 nltk.download('wordnet')
@@ -95,22 +93,6 @@ stoplist.remove('not')
 def remove_stopwords(text):
     """function to remove the stopwords"""
     return " ".join([word for word in str(text).split() if word not in stoplist])
-
-# Helper function for wordcloud
-# Reference: https://www.kaggle.com/aashita/word-clouds-of-various-shapes
-def plot_wordcloud(text, mask = None, max_words = 500, max_font_size = 40, 
-                   figure_size = (12, 6), title = None, title_size = 15):
-    wordcloud = WordCloud(background_color = 'white', max_words = max_words,
-                          random_state = 42, width = 350, height = 150, 
-                          mask = mask, stopwords = stoplist, collocations = False)
-    wordcloud.generate(str(text))
-    
-    plt.figure(figsize = figure_size)
-    plt.imshow(wordcloud, interpolation = 'bilinear');
-    plt.title(title, fontdict = {'size': title_size, 'color': 'black', 
-                               'verticalalignment': 'bottom'})
-    plt.axis('off');
-    plt.tight_layout()
 
 # Second helper function for lemmatizing
 lemmatizer = WordNetLemmatizer()
