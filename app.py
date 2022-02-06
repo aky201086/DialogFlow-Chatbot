@@ -20,7 +20,7 @@ model = load_model("finalized_keras_model.h5")
 
 @app.route('/')
 def hello():
-    return 'Hello There!!!'
+    return 'Hello There!!!!!!'
 
 # geting and sending response to dialogflow
 @app.route('/webhook', methods=['POST'])
