@@ -58,6 +58,7 @@ def processRequest(req):
         prediction = predict(description)
           
         fulfillmentText= "Predicted Accident Level  {} !".format(prediction)
+        print(fulfillmentText)
 	
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
